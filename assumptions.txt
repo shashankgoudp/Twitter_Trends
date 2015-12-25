@@ -1,0 +1,45 @@
+Below are the assumptions I made to complete the program:
+
+1	I have assumed sliding window in terms of Tweet count.
+	Number of tweets on which you want to see the top K Hashtags, becomes the sliding window size.
+	I am also taking the number of tags (K value) to be displayed as an input from the user itself.
+
+2	lets suppose I have given sliding windowsize as 100 and I want 10 top tags to displayed.
+	Then top 10 tags in 1 to 100 tweets are displayed and next ,top 10 tags from 2 to 101 tweets are displayed and next, top 10 tags from 3 to 102 tweets are displayed and so on.
+
+3	In my results tags with all the ????? will be displayed. I did some analysis on why ?'s are getting dislpayed. If any special character comes instead of ASCII character, then twitter API function getHashTagEntity() is displaying that hashtag as ?????. For refernce I have added the screenshot in the results.doc
+	We can remove those special characters by writing one line of code, However as we were asked to print all the top tags I didnot handle that special characters part.
+	The below line of code can added to exclude special characters.
+	int c = hashtag.charAt(i);
+            if(c > 127) {
+                return false;
+		}
+
+
+4	Whenever there is no Hashtag in the tweet, getHashTagEntity function returns NULL for that tweet.
+
+5	As the HashTags flow continuoysly one after other in consecutive windows, because of the console screen size constraint you may not see the first window Hashtags.
+	So we can put the entire console output in a file. I didnt handle this case in my program, However I can include it if there is a requirement. It requires adding two extra lines of code.
+
+6	As the sliding window is in terms of tweetcount, whenever a new tweet comes the oldest tweet is deleted and new tweet is added to the window and then Top K hashtags in the new window are displayed.
+
+Below are References I have used to do coding of the project :
+
+http://codereview.stackexchange.com/questions/52560/twitter-streaming-client-round2
+
+http://codereview.stackexchange.com/questions/52014/twitter-streaming-api-client-identifying-the-top-trending-hashtags-for-a-specif
+
+http://stackoverflow.com/questions/12097247/how-to-get-sample-from-twitter-stream-and-print-to-screen
+
+http://www.programcreek.com/java-api-examples/index.php?api=twitter4j.conf.ConfigurationBuilder
+
+http://tutorials.jenkov.com/java-util-concurrent/executorservice.html
+
+http://www.java-samples.com/showtutorial.php?tutorialid=392
+
+http://beginnersbook.com/2013/12/how-to-sort-hashmap-in-java-by-keys-and-values/
+
+http://www.mkyong.com/java/how-to-read-input-from-console-java/
+
+http://stackoverflow.com/questions/16099986/how-do-i-make-concurrently-running-threads
+

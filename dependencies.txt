@@ -1,0 +1,8 @@
+This project needs twitter4j Jar file.
+
+I am have attached them in this ZIP file under Jar Files folder.
+
+However, I exported the project from the eclipse along with Jar files so adding these jar files externally is not required.
+
+But to be on safe side, I have added the jar files. In eclipse , after importing the project if you see an error saying that the libraries are missing then please try adding the jar files which I have attached.
+
